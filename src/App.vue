@@ -4,7 +4,10 @@ import TheHeader from '@/components/header/TheHeader.vue'
 import TheMain from '@/components/main/TheMain.vue'
 import { THE_MENU } from "@/store/constants"
 
+// vars
 const activePage = ref(THE_MENU)
+
+// functions
 const activatePage = function (item) {
   activePage.value = item
 }

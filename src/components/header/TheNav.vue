@@ -1,7 +1,10 @@
 <script setup>
 import { NAVLIST } from "@/store/constants";
 
+// emits
 const emit = defineEmits(['active-page'])
+
+//functions
 const activatePage = function (value) {
   emit('active-page', value)
 }

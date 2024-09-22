@@ -1,8 +1,10 @@
 <script setup>
 import { MENU_LIST } from '../../../store/constants'
 
+// emits
 const emit = defineEmits(['selected-dish'])
 
+// functions
 const selectDish = function (dish) {
   emit('selected-dish', dish)
 }
@@ -22,7 +24,7 @@ const selectDish = function (dish) {
           {{ item.title }}
         </p>
         <p>
-          {{ item.price }}
+          {{ item.price }} тг.
         </p>
       </div>
     </li>

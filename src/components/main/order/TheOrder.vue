@@ -1,5 +1,11 @@
+<script setup>
+const props = defineProps({
+  orderList: Array
+})
+</script>
+
 <template>
   <div>
-    order
+    {{ props.orderList }}
   </div>
 </template>
