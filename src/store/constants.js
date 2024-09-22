@@ -4,6 +4,12 @@ export const NAVLIST = {
   payment: 'Оплата'
 }
 
+export const THE_MENU = 'menu'
+
+export const THE_ORDER = 'order'
+
+export const THE_PAYMENT = 'payment'
+
 export const MENU_LIST = [{
   photo: 'juicy-cheeseburger.jpg',
   title: 'Чизбургер',
@@ -24,8 +30,8 @@ export const MENU_LIST = [{
 },
 {
   photo: 'shrimps-mussels-pizza.jpg',
-  title: 'Креветки',
-  ingredients: 'Креветки, чеснок, лимон, петружка, перец, сливочное масло',
+  title: 'Пицца',
+  ingredients: 'Креветки, помидор, моцарелло, чеснок, лимон, петружка, перец, сливочное масло',
   price: '4300 тг'
 },
 {

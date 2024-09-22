@@ -1,24 +1,16 @@
 <script setup>
-import { ref } from 'vue'
-import TheMenuList from './TheMenuList.vue'
-import TheMenuInfo from './TheMenuInfo.vue'
+import TheMenu from './menu/TheMenu.vue'
+import TheOrder from './order/TheOrder.vue'
+import { THE_MENU, THE_ORDER, THE_PAYMENT } from "@/store/constants"
 
-const dishItem = ref({})
-const isDishSelected = ref(false)
-const selects = function (e) {
-  dishItem.value = e
-  isDishSelected.value = true
-}
+const props = defineProps({
+  activePage: String
+})
 </script>
 
 <template>
   <div>
-    <div class="flex">
-      <TheMenuList
-        @selected-dish="selects($event)"/>
-      <TheMenuInfo
-        :dish="dishItem"
-        :class="{'flex-none w-1/3' : isDishSelected}"/>
-    </div>
+    <TheMenu v-if="props.activePage === THE_MENU"/>
+    <TheOrder v-else-if="props.activePage === THE_ORDER"/>
   </div>
 </template>

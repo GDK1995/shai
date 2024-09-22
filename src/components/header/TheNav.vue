@@ -1,5 +1,10 @@
 <script setup>
 import { NAVLIST } from "@/store/constants";
+
+const emit = defineEmits(['active-page'])
+const activatePage = function (value) {
+  emit('active-page', value)
+}
 </script>
 
 <template>
@@ -8,7 +13,8 @@ import { NAVLIST } from "@/store/constants";
       v-for="nav, value in NAVLIST"
       :key="nav"
       :href="`#${value}`"
-      class="font-mono mx-2">
+      class="mx-2"
+      @click="activatePage(value)">
       {{ nav }}
     </a>
   </div>
