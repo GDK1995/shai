@@ -14,7 +14,7 @@ const activatePage = function (item) {
 </script>
 
 <template>
-  <div class="font-mono">
+  <div class="font-mono h-screen">
     <TheHeader @active-page="activatePage"/>
     <TheMain :active-page="activePage"/>
   </div>

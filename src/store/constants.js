@@ -10,6 +10,20 @@ export const THE_ORDER = 'order'
 
 export const THE_PAYMENT = 'payment'
 
+export const CURRENCY = 'тг.'
+
+export const TOTAL_TEXT = 'Итого:'
+
+export const ORDER_TEXT = 'Заказ'
+
+export const INGREDIENTS_TEXT = 'Ингредиенты'
+
+export const PRICE_TEXT = 'Цена'
+
+export const EXCLUDE_TEXT = 'исключить'
+
+export const Q_DO_YOU_HAVE_ALLERGY = 'Есть аллергия на ингредиенты?'
+
 export const MENU_LIST = [{
   photo: 'juicy-cheeseburger.jpg',
   title: 'Чизбургер',
@@ -40,3 +54,11 @@ export const MENU_LIST = [{
   ingredients: 'Куриное филе, кукурузные лепешки, лук, томаты, фасоль, огурец, зеленый салат, сыр, укроп, петрушка, соевый соус',
   price: 1900
 }]
+
+// for empty texts
+export const DONT_YET_ORDER_ANYTHING = 'А Вы еще ничего не выбрали...'
+
+// for button text
+export const CONFIRM_ORDER = 'Подтвердить заказ'
+
+export const ADD_ORDER = 'Добавить заказ'

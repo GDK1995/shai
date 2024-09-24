@@ -2,6 +2,7 @@
 import { ref, reactive } from 'vue'
 import DishInfo from './DishInfo.vue'
 import BaseButtonWhite from '../../bases/BaseButtonWhite.vue'
+import { ADD_ORDER, Q_DO_YOU_HAVE_ALLERGY } from '../../../store/constants'
 
 // props and emits
 const props = defineProps({
@@ -60,7 +61,7 @@ const clearingDish = function () {
         @count-dish="setCount"/>
       <div class="flex mt-6">
         <div class="text-sm">
-          <p>Есть аллергия на ингредиенты?</p>
+          <p>{{ Q_DO_YOU_HAVE_ALLERGY }}</p>
           <textarea
             style="resize:none;"
             cols="25"
@@ -70,7 +71,7 @@ const clearingDish = function () {
             class="rounded border-pink-200 bg-pink-300 p-2 placeholder-white focus:outline-none"></textarea>
         </div>
         <BaseButtonWhite @click="setOrder" class="m-auto">
-          <p>Добавить заказ</p>
+          <p>{{ ADD_ORDER }}</p>
         </BaseButtonWhite>
       </div>
     </div>

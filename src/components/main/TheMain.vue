@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import TheMenu from './menu/TheMenu.vue'
 import TheOrder from './order/TheOrder.vue'
+import ThePayment from './payment/ThePayment.vue'
 import { THE_MENU, THE_ORDER } from "@/store/constants"
 
 // emits and props
@@ -28,5 +29,6 @@ const addOrder = function (orderItem) {
     <TheOrder
       v-else-if="props.activePage === THE_ORDER"
       :order-list="orderList"/>
+    <ThePayment v-else/>
   </div>
 </template>

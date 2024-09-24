@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import { PlusCircleIcon, MinusCircleIcon } from '@heroicons/vue/24/solid'
+import { CURRENCY, INGREDIENTS_TEXT, PRICE_TEXT } from '../../../store/constants'
 
 // props and emits
 const props = defineProps({
@@ -30,9 +31,9 @@ const decrease = function () {
   <div>
     <p class="uppercase">{{ props.dish.title }}</p>
     <img :src="`/img/${props.dish.photo}`" alt="dish" class="h-48 my-4">
-    <p>Ингредиенты: {{ props.dish.ingredients }}</p>
+    <p>{{ INGREDIENTS_TEXT }}: {{ props.dish.ingredients }}</p>
     <div class="flex">
-      <p class="my-4">Цена: {{ props.dish.price }} тг.</p>
+      <p class="my-4">{{ PRICE_TEXT }}: {{ props.dish.price }} {{ CURRENCY }}</p>
       <div class="flex m-auto gap-2">
         <MinusCircleIcon @click="decrease" class="h-7 cursor-pointer active:text-pink-50"/>
         <p class="m-auto">{{ count }}</p>

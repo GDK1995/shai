@@ -1,5 +1,5 @@
 <script setup>
-import { MENU_LIST } from '../../../store/constants'
+import { MENU_LIST, CURRENCY } from '../../../store/constants'
 
 // emits
 const emit = defineEmits(['selected-dish'])
@@ -24,7 +24,7 @@ const selectDish = function (dish) {
           {{ item.title }}
         </p>
         <p>
-          {{ item.price }} тг.
+          {{ item.price }} {{ CURRENCY }}
         </p>
       </div>
     </li>
