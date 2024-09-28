@@ -3,9 +3,6 @@ import { ref } from 'vue'
 import TheMenuInfo from './TheMenuInfo.vue'
 import TheMenuList from './TheMenuList.vue'
 
-// emits
-const emits = defineEmits(['add-order'])
-
 // vars
 const dishItem = ref({})
 const isDishSelected = ref(false)
@@ -20,10 +17,6 @@ const clearingDish = function () {
   dishItem.value = {}
   isDishSelected.value = false
 }
-
-const addOrder = function (orderItem) {
-  emits('add-order', orderItem)
-}
 </script>
 
 <template>
@@ -33,7 +26,6 @@ const addOrder = function (orderItem) {
     <TheMenuInfo
       v-show="isDishSelected"
       @clear-dish="clearingDish"
-      @add-order="addOrder"
       :dish="dishItem"
       :class="{'flex-none w-1/3' : isDishSelected}"/>
   </div>

@@ -2,7 +2,7 @@
 import { computed } from 'vue'
 import BaseButtonPink from '../../bases/BaseButtonPink.vue'
 import OrderItem from './OrderItem.vue'
-import { CURRENCY, TOTAL_TEXT, ORDER_TEXT, CONFIRM_ORDER } from '../../../store/constants'
+import { CURRENCY, TOTAL_TEXT, ORDER_TEXT, CONFIRM_ORDER, MENU_LIST } from '../../../store/constants'
 
 // props
 const props = defineProps({
@@ -11,7 +11,12 @@ const props = defineProps({
 
 // computed
 const totalPrice = computed(() => {
-  return props.orderList.reduce((acc, item) => acc + (item.price * item.count), 0)
+  let total = 0
+  props.orderList.forEach(element => {
+    const price = MENU_LIST.find(item => item.id === element.dish_id).price
+    total += price * element.count
+  })
+  return total
 })
 </script>
 
