@@ -12,7 +12,7 @@ export const THE_PAYMENT = 'payment'
 
 export const CURRENCY = 'тг.'
 
-export const TOTAL_TEXT = 'Итого:'
+export const TOTAL_TEXT = 'Итого'
 
 export const ORDER_TEXT = 'Заказ'
 
@@ -63,10 +63,14 @@ export const MENU_LIST = [{
 // for empty texts
 export const DONT_YET_ORDER_ANYTHING = 'А Вы еще ничего не выбрали...'
 
+export const ANYTHING_TO_PAY = 'Нет счета для оплаты. Подтвердите заказ...'
+
 // for button text
 export const CONFIRM_ORDER = 'Подтвердить заказ'
 
 export const ADD_ORDER = 'Добавить заказ'
+
+export const PAY_ORDER = 'Оплатить'
 
 // to reset vars
 export const ORDER_RESET = {
@@ -75,3 +79,16 @@ export const ORDER_RESET = {
   count: 1,
   dish_id: null
 }
+
+// payment
+export const PAYMENT_SUCCESS = 'Оплата прошла успешно!'
+
+export const NEED_TO_PAY = 'К оплате'
+
+export const QR_SIZE = 200
+
+export const CASH_RECEIPT = 'Кассовый чек'
+
+export const NAME_DISH = 'Название блюда'
+
+export const PRICE_DISH = 'Сумма блюда'

@@ -10,7 +10,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <div>
+  <div class="my-12">
     <OrderList
       v-if="props.orderList.length"
       :order-list="orderList"/>
