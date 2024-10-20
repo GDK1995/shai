@@ -21,7 +21,35 @@ export function clearingOrderItem () {
   orderItem = reactive({ ...ORDER_RESET })
 }
 
+export function clearingOrder () {
+  orderList.value = []
+}
+
 export function deleteOrderItem (id) {
   const objIndex = orderList.value.findIndex(element => element.id === id)
   orderList.value.splice(objIndex, 1)
+}
+
+export const isConfirmed = ref(false)
+
+export function confirmOrder() {
+  isConfirmed.value = true
+}
+
+export const prepeare = ref('w-0')
+
+export function prepAct() {
+  prepeare.value = prepeare.value === 'w-1/2' ? 'w-full' : 'w-1/2'
+}
+
+export function resetPrep() {
+  prepeare.value = 'w-0'
+}
+
+export function pay() {
+  isConfirmed.value = false
+
+  resetPrep()
+
+  clearingOrder()
 }

@@ -1,26 +1,13 @@
 <script setup>
-import { computed, inject } from 'vue'
+import { inject } from 'vue'
 import BaseButtonPink from '../../bases/BaseButtonPink.vue'
 import OrderItem from './OrderItem.vue'
-import { toConfirmOrderKey } from '../../../store/keys'
+import { orderList, confirmOrder, isConfirmed } from '@/store/order'
+import { totalSum } from '@/store/functions'
 import { CURRENCY, TOTAL_TEXT, ORDER_TEXT, CONFIRM_ORDER, MENU_LIST } from '../../../store/constants'
 
-// props
-const props = defineProps({
-  orderList: Array
-})
-
 // computed
-const totalPrice = computed(() => {
-  let total = 0
-  props.orderList.forEach(element => {
-    const price = MENU_LIST.find(item => item.id === element.dish_id).price
-    total += price * element.count
-  })
-  return total
-})
-
-const confirm = inject(toConfirmOrderKey)
+const totalPrice = totalSum()
 </script>
 
 <template>
@@ -29,7 +16,7 @@ const confirm = inject(toConfirmOrderKey)
     <div class="flex justify-center">
       <ul class="flex flex-col w-4/5 m-4">
         <li
-          v-for="(item, index) in props.orderList"
+          v-for="(item, index) in orderList"
           :key="item">
           <OrderItem
             :queue="index"
@@ -42,8 +29,9 @@ const confirm = inject(toConfirmOrderKey)
         </li>
       </ul>
     </div>
-    <div>
-      <BaseButtonPink @click="confirm">
+    <div v-if="!isConfirmed">
+      <BaseButtonPink
+        @click="confirmOrder">
         <p>{{ CONFIRM_ORDER }}</p>
       </BaseButtonPink>
     </div>

@@ -1,9 +1,10 @@
 <script setup>
 import { ref } from 'vue'
 import QrcodeVue from 'qrcode.vue'
+import { totalSum } from '@/store/functions'
 import { QR_SIZE } from '../../../store/constants'
 
-let value = ref('500')
+let value = ref(String(totalSum()))
 </script>
 
 <template>

@@ -1,9 +1,8 @@
 <script setup>
-import { reactive } from 'vue'
 import DishInfo from './DishInfo.vue'
 import BaseButtonWhite from '../../bases/BaseButtonWhite.vue'
 import { ADD_ORDER, Q_DO_YOU_HAVE_ALLERGY, ORDER_RESET } from '../../../store/constants'
-import { addOrder, orderItem, clearingOrderItem } from '../../../store/order'
+import { addOrder, orderItem, clearingOrderItem, isConfirmed } from '../../../store/order'
 
 // props and emits
 const props = defineProps({
@@ -36,7 +35,7 @@ const clearingDish = function () {
 </script>
 
 <template>
-  <div class="relative min-h-screen flex flex-col bg-pink-400 text-white">
+  <aside class="relative min-h-screen flex flex-col bg-pink-400 text-white">
     <div class="fixed flex flex-col p-4">
       <button @click="clear" class="absolute right-5">x</button>
       <DishInfo
@@ -55,10 +54,13 @@ const clearingDish = function () {
             placeholder="Напишите ингредиенты"
             class="rounded border-pink-200 bg-pink-300 p-2 placeholder-white focus:outline-none"></textarea>
         </div>
-        <BaseButtonWhite @click="addOrders" class="m-auto">
+        <BaseButtonWhite
+          v-if="!isConfirmed"
+          @click="addOrders"
+          class="m-auto">
           <p>{{ ADD_ORDER }}</p>
         </BaseButtonWhite>
       </div>
     </div>
-  </div>
+  </aside>
 </template>

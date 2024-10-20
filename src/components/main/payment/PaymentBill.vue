@@ -1,9 +1,13 @@
 <script setup>
-import { inject } from 'vue'
-import { orderListKey } from '../../../store/keys'
-import { NAME_DISH, PRICE_DISH, TOTAL_TEXT } from '../../../store/constants'
+import { computed } from 'vue'
+import { orderList } from '@/store/order'
+import { orderData, totalSum } from '@/store/functions'
+import { NAME_DISH, PRICE_DISH, TOTAL_TEXT, CURRENCY } from '../../../store/constants'
 
-const orderList = inject(orderListKey)
+const orderInfo = (item) => orderData(item)
+
+// computed
+const totalPrice = totalSum()
 </script>
 
 
@@ -18,13 +22,12 @@ const orderList = inject(orderListKey)
         <tr
           v-for="(item, index) in orderList"
           :key="item + index">
-          <td>{{ index + 1 }}</td>
-          <td>{{ item }}</td>
-          <td>{{ item }}</td>
+          <td>{{ orderInfo(item).title }}</td>
+          <td>{{ orderInfo(item).price * item.count }} {{ CURRENCY }}</td>
         </tr>
         <tr>
           <td>{{ TOTAL_TEXT }}</td>
-          <td></td>
+          <td>{{ totalPrice }} {{ CURRENCY }}</td>
         </tr>
       </tbody>
     </table>

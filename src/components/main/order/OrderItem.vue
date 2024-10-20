@@ -2,8 +2,9 @@
 import { computed } from 'vue'
 import { TrashIcon } from '@heroicons/vue/24/solid'
 import BaseButtonIcon from '../../bases/BaseButtonIcon.vue'
-import { CURRENCY, EXCLUDE_TEXT, MENU_LIST } from '../../../store/constants'
-import { deleteOrderItem } from '../../../store/order'
+import { CURRENCY, EXCLUDE_TEXT } from '../../../store/constants'
+import { orderData } from '@/store/functions'
+import { deleteOrderItem, isConfirmed } from '../../../store/order'
 
 // props
 const props = defineProps({
@@ -12,10 +13,7 @@ const props = defineProps({
 })
 
 // computed
-const orderInfo = computed(() => {
-  const {title, price} = MENU_LIST.find(item => item.id === props.orderItem.dish_id)
-  return {title, price}
-})
+const orderInfo = computed(() => orderData(props.orderItem))
 </script>
 
 <template>
@@ -28,6 +26,7 @@ const orderInfo = computed(() => {
       </div>
     </div>
     <BaseButtonIcon
+      v-if="!isConfirmed"
       class="ml-4 active:bg-pink-50"
       @click="deleteOrderItem(props.orderItem.id)">
       <TrashIcon class="h-5 text-red-500"/>

@@ -92,3 +92,7 @@ export const CASH_RECEIPT = 'Кассовый чек'
 export const NAME_DISH = 'Название блюда'
 
 export const PRICE_DISH = 'Сумма блюда'
+
+export const PAY_CARD = 'Оплатить картой'
+
+export const PAY_CASH = 'Оплатить наличными'
