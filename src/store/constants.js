@@ -72,13 +72,19 @@ export const ADD_ORDER = 'Добавить заказ'
 
 export const PAY_ORDER = 'Оплатить'
 
-// to reset vars
+// order
 export const ORDER_RESET = {
   id: null,
   excludedIngredients: '',
   count: 1,
   dish_id: null
 }
+
+export const ORDER_ACCEPT = 'принят'
+
+export const COOKING = 'готовится'
+
+export const DONE = 'готов'
 
 // payment
 export const PAYMENT_SUCCESS = 'Оплата прошла успешно!'

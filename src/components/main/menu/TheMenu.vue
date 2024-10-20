@@ -24,9 +24,9 @@ const clearingDish = function () {
     <TheMenuList
       @selected-dish="selects($event)"/>
     <TheMenuInfo
-      v-show="isDishSelected"
       @clear-dish="clearingDish"
       :dish="dishItem"
-      :class="{'flex-none w-1/3' : isDishSelected}"/>
+      class="transition-width duration-500 ease-in"
+      :class="[isDishSelected ? 'flex-none w-1/3' : 'w-0']"/>
   </div>
 </template>
