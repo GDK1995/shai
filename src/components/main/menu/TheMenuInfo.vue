@@ -1,12 +1,16 @@
 <script setup>
 import DishInfo from './DishInfo.vue'
+import { isDishObjectValidate } from '@/store/validator'
 import BaseButtonWhite from '../../bases/BaseButtonWhite.vue'
 import { ADD_ORDER, Q_DO_YOU_HAVE_ALLERGY, ORDER_RESET } from '../../../store/constants'
 import { addOrder, orderItem, clearingOrderItem, isConfirmed } from '../../../store/order'
 
 // props and emits
 const props = defineProps({
-  dish: Object
+  dish: {
+    type: Object,
+    validator: isDishObjectValidate
+  }
 })
 
 const emits = defineEmits(['clear-dish'])

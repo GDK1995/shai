@@ -1,11 +1,18 @@
 <script setup>
 import { onMounted } from 'vue'
-import { prepeare, prepAct } from '@/store/order'
+import { prepeare, prepAct, isConfirmed, doneOrder } from '@/store/order'
 import { ORDER_ACCEPT, COOKING, DONE } from '@/store/constants'
 import { CheckCircleIcon, ArrowPathIcon, FireIcon } from '@heroicons/vue/24/solid'
 
 const percentage = function () {
-  prepeare.value !== 'w-full' ? prepAct() : intervalClear()
+  if (isConfirmed.value) {
+    if (prepeare.value !== 'w-full') {
+      prepAct()
+    } else {
+      doneOrder()
+      intervalClear()
+    }
+  }
 }
 
 const setInter = setInterval(() => percentage(), 5000)

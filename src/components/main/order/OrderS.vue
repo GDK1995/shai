@@ -2,12 +2,8 @@
 import BaseButtonPink from '../../bases/BaseButtonPink.vue'
 import OrderAction from './OrderAction.vue'
 import OrderList from './OrderList.vue'
-import { confirmOrder, isConfirmed } from '@/store/order'
-import { totalSum } from '@/store/functions'
-import { CURRENCY, TOTAL_TEXT, ORDER_TEXT, CONFIRM_ORDER } from '../../../store/constants'
-
-// computed
-const totalPrice = totalSum()
+import { confirmOrder, isConfirmed, isDone } from '@/store/order'
+import { ORDER_TEXT, CONFIRM_ORDER, PAY_ORDER } from '../../../store/constants'
 </script>
 
 <template>
@@ -17,8 +13,11 @@ const totalPrice = totalSum()
       class="transition-all duration-500 ease-in mb-5"
       :class="[!isConfirmed ? 'h-0 opacity-0' : 'h-9 opacity-100']"/>
     <OrderList />
-    <BaseButtonPink v-if="!isConfirmed" @click="confirmOrder" class="w-52">
-      <p>{{ CONFIRM_ORDER }}</p>
-    </BaseButtonPink>
+    <div v-if="!isConfirmed">
+      <BaseButtonPink @click="confirmOrder" class="w-52">
+        <p v-if="!isConfirmed">{{ CONFIRM_ORDER }}</p>
+        <!-- <p v-if="isDone">{{ PAY_ORDER }}</p> -->
+      </BaseButtonPink>
+    </div>
   </div>
 </template>

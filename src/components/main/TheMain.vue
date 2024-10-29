@@ -2,11 +2,14 @@
 import TheMenu from './menu/TheMenu.vue'
 import TheOrder from './order/TheOrder.vue'
 import ThePayment from './payment/ThePayment.vue'
-import { THE_MENU, THE_ORDER } from "@/store/constants"
+import { isPageValidator } from '@/store/validator'
+import { THE_MENU, THE_ORDER, NAVLIST } from "@/store/constants"
 
 // emits and props
 const props = defineProps({
-  activePage: String
+  activePage: String,
+  required: true,
+  validator: isPageValidator
 })
 </script>
 

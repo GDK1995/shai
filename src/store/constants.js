@@ -1,14 +1,14 @@
-export const NAVLIST = {
-  menu: 'Меню',
-  order: 'Заказ',
-  payment: 'Оплата'
-}
-
 export const THE_MENU = 'menu'
 
 export const THE_ORDER = 'order'
 
 export const THE_PAYMENT = 'payment'
+
+export const NAVLIST = {
+  [THE_MENU]: 'Меню',
+  [THE_ORDER]: 'Заказ',
+  [THE_PAYMENT]: 'Оплата'
+}
 
 export const CURRENCY = 'тг.'
 

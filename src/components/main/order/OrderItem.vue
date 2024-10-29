@@ -4,12 +4,19 @@ import { TrashIcon } from '@heroicons/vue/24/solid'
 import BaseButtonIcon from '../../bases/BaseButtonIcon.vue'
 import { CURRENCY, EXCLUDE_TEXT } from '../../../store/constants'
 import { orderData } from '@/store/functions'
+import { isOrderObjectValidate, isNumber } from '@/store/validator'
 import { deleteOrderItem, isConfirmed } from '../../../store/order'
 
 // props
 const props = defineProps({
-  orderItem: Object,
-  queue: Number
+  orderItem: {
+    type: Object,
+    validator: isOrderObjectValidate
+  },
+  queue: {
+    type: Number,
+    validator: isNumber
+  }
 })
 
 // computed
@@ -18,6 +25,7 @@ const orderInfo = computed(() => orderData(props.orderItem))
 
 <template>
   <div>
+    {{ props.orderItem }}
     <div class="flex justify-between py-2 px-4 border flex-grow">
       <p>{{queue + 1}}) {{ orderInfo.title }} <span v-if="props.orderItem.excludedIngredients">({{ EXCLUDE_TEXT }}: {{ props.orderItem.excludedIngredients }})</span></p>
       <div class="flex">

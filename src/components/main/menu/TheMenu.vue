@@ -26,7 +26,7 @@ const clearingDish = function () {
     <TheMenuInfo
       @clear-dish="clearingDish"
       :dish="dishItem"
-      class="transition-width duration-500 ease-in"
+      class="transition-width duration-1000 ease-in"
       :class="[isDishSelected ? 'flex-none w-1/3' : 'w-0']"/>
   </div>
 </template>

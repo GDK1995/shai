@@ -36,6 +36,12 @@ export function confirmOrder() {
   isConfirmed.value = true
 }
 
+export const isDone = ref(false)
+
+export function doneOrder() {
+  isDone.value = true
+}
+
 export const prepeare = ref('w-0')
 
 export function prepAct() {

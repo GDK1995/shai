@@ -1,11 +1,15 @@
 <script setup>
 import { PlusCircleIcon, MinusCircleIcon } from '@heroicons/vue/24/solid'
+import { isCounterValid } from '@/store/validator'
 
 // emits and props
 const emit = defineEmits(['set-count'])
 
 const props = defineProps({
-  count: Number
+  count: {
+    type: Number,
+    validator: isCounterValid
+  }
 })
 
 // functions

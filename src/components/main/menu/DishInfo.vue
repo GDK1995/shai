@@ -1,11 +1,18 @@
 <script setup>
+import { isDishObjectValidate, isCounterValid } from '@/store/validator'
 import CounterItem from '@/components/bases/CounterItem.vue';
 import { CURRENCY, INGREDIENTS_TEXT, PRICE_TEXT } from '../../../store/constants'
 
 // props and emits
 const props = defineProps({
-  dish: Object,
-  count: Number
+  dish: {
+    type: Object,
+    validator: isDishObjectValidate
+  },
+  count: {
+    type: Number,
+    validator: isCounterValid
+  }
 })
 
 const emit = defineEmits(['set-count'])
