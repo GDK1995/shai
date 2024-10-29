@@ -25,7 +25,6 @@ const orderInfo = computed(() => orderData(props.orderItem))
 
 <template>
   <div>
-    {{ props.orderItem }}
     <div class="flex justify-between py-2 px-4 border flex-grow">
       <p>{{queue + 1}}) {{ orderInfo.title }} <span v-if="props.orderItem.excludedIngredients">({{ EXCLUDE_TEXT }}: {{ props.orderItem.excludedIngredients }})</span></p>
       <div class="flex">
