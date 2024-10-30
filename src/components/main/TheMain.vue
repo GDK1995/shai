@@ -7,9 +7,11 @@ import { THE_MENU, THE_ORDER, NAVLIST } from "@/store/constants"
 
 // emits and props
 const props = defineProps({
-  activePage: String,
-  required: true,
-  validator: isPageValidator
+  activePage: {
+    type: String,
+    required: true,
+    validator: isPageValidator
+  }
 })
 </script>
 

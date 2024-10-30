@@ -1,9 +1,10 @@
 <script setup>
 import DishInfo from './DishInfo.vue'
+import { TOAST_TEXT } from '@/store/toast'
 import { isDishObjectValidate } from '@/store/validator'
 import BaseButtonWhite from '../../bases/BaseButtonWhite.vue'
-import { ADD_ORDER, Q_DO_YOU_HAVE_ALLERGY, ORDER_RESET } from '../../../store/constants'
-import { addOrder, orderItem, clearingOrderItem, isConfirmed } from '../../../store/order'
+import { ADD_ORDER, Q_DO_YOU_HAVE_ALLERGY, ORDER_RESET, DISH_ADD_ORDER } from '@/store/constants'
+import { addOrder, orderItem, clearingOrderItem, isConfirmed } from '@/store/order'
 
 // props and emits
 const props = defineProps({
@@ -25,6 +26,7 @@ const setCount = function (act) {
 }
 
 const addOrders = function () {
+  TOAST_TEXT.value = DISH_ADD_ORDER
   addOrder(orderItem, props.dish.id)
 }
 

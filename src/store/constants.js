@@ -1,3 +1,4 @@
+// page
 export const THE_MENU = 'menu'
 
 export const THE_ORDER = 'order'
@@ -10,6 +11,7 @@ export const NAVLIST = {
   [THE_PAYMENT]: 'Оплата'
 }
 
+// dish
 export const CURRENCY = 'тг.'
 
 export const TOTAL_TEXT = 'Итого'
@@ -86,6 +88,8 @@ export const COOKING = 'готовится'
 
 export const DONE = 'готов'
 
+export const DISH_ADD_ORDER = 'Блюдо добавлен в заказ!'
+
 // payment
 export const PAYMENT_SUCCESS = 'Оплата прошла успешно!'
 
@@ -102,3 +106,18 @@ export const PRICE_DISH = 'Сумма блюда'
 export const PAY_CARD = 'Оплатить картой'
 
 export const PAY_CASH = 'Оплатить наличными'
+
+// toast
+export const SUCCESS = 'success'
+
+export const WARN = 'warn'
+
+export const FAILED = 'failed'
+
+export const TOAST_STATUS = {
+  [SUCCESS]: 'bg-green-400',
+  [WARN]: 'bg-yellow-400',
+  [FAILED]: 'bg-red-400'
+}
+
+export const TIME_OUT = 2000
