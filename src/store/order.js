@@ -42,6 +42,10 @@ export function doneOrder() {
   isDone.value = true
 }
 
+export function doneOrderFalse() {
+  isDone.value = false
+}
+
 export const prepeare = ref('w-0')
 
 export function prepAct() {
@@ -56,6 +60,8 @@ export function pay() {
   isConfirmed.value = false
 
   resetPrep()
+
+  doneOrderFalse()
 
   clearingOrder()
 }

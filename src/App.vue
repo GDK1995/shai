@@ -5,7 +5,7 @@ import TheMain from '@/components/main/TheMain.vue'
 import ToastItem from '@/components/toast/ToastItem.vue'
 import { normalizePageHash } from "@/store/functions"
 import { TOAST_TEXT } from '@/store/toast'
-import { PAGE_KEY } from '@/store/keys'
+import { PAGE_KEY, ACTIVATE_PAGE_KEY } from '@/store/keys'
 
 const activePage = ref(normalizePageHash())
 
@@ -15,6 +15,7 @@ const activatePage = function (item) {
 }
 
 provide(PAGE_KEY, activePage)
+provide(ACTIVATE_PAGE_KEY, activatePage)
 </script>
 
 <template>

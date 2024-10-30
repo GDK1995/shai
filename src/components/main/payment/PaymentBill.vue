@@ -12,22 +12,22 @@ const totalPrice = totalSum()
 
 
 <template>
-  <div class="flex items-center justify-center">
-    <table>
+  <div class="flex items-center justify-center text-center">
+    <table class="w-4/5">
       <tbody>
-        <tr>
+        <tr class="p-2 bg-pink-200">
           <th>{{ NAME_DISH }}</th>
           <th>{{ PRICE_DISH }}</th>
         </tr>
         <tr
           v-for="(item, index) in orderList"
           :key="item + index">
-          <td>{{ orderInfo(item).title }}</td>
-          <td>{{ orderInfo(item).price * item.count }} {{ CURRENCY }}</td>
+          <td class="p-2">{{ orderInfo(item).title }}</td>
+          <td class="p-2">{{ orderInfo(item).price * item.count }} {{ CURRENCY }}</td>
         </tr>
-        <tr>
-          <td>{{ TOTAL_TEXT }}</td>
-          <td>{{ totalPrice }} {{ CURRENCY }}</td>
+        <tr class="bg-pink-100">
+          <td class="p-2">{{ TOTAL_TEXT }}</td>
+          <td class="p-2">{{ totalPrice }} {{ CURRENCY }}</td>
         </tr>
       </tbody>
     </table>

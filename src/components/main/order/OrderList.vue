@@ -10,7 +10,7 @@ const totalPrice = totalSum()
 
 <template>
   <div class="flex justify-center w-4/5">
-    <ul class="flex flex-col w-4/5 m-4">
+    <ul class="flex flex-col w-full lg:w-4/5 m-4">
       <li v-for="(item, index) in orderList"
         :key="item">
         <OrderItem

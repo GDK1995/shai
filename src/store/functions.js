@@ -2,6 +2,10 @@
 import { MENU_LIST, NAVLIST, THE_MENU } from "./constants"
 import { orderList } from '@/store/order'
 
+export function setHash (page) {
+  window.location.hash = page
+}
+
 // funtion to set page hash
 export function normalizePageHash () {
   const hash = window.location.hash.slice(1)
@@ -10,7 +14,7 @@ export function normalizePageHash () {
     return hash
   }
 
-  window.location.hash = THE_MENU
+  setHash(THE_MENU)
   return THE_MENU
 }
 

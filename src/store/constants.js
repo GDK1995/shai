@@ -120,4 +120,10 @@ export const TOAST_STATUS = {
   [FAILED]: 'bg-red-400'
 }
 
+export const TOAST_BTTN = {
+  [SUCCESS]: 'hover:bg-green-100 hover:text-green-900',
+  [WARN]: 'hover:bg-yellow-100 hover:text-yellow-900',
+  [FAILED]: 'hover:bg-red-100 hover:text-red-900'
+}
+
 export const TIME_OUT = 2000

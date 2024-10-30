@@ -41,15 +41,15 @@ const clearingDish = function () {
 </script>
 
 <template>
-  <aside class="relative min-h-screen flex flex-col bg-pink-400 text-white">
-    <div class="fixed flex flex-col p-4">
+  <aside class="flex flex-col bg-pink-400 text-white">
+    <div class="min-h-screen flex flex-col p-4 lg:fixed">
       <button @click="clear" class="absolute right-5">x</button>
       <DishInfo
-        class="flex flex-col overflow-x-auto max-h-96"
+        class="flex flex-col flex-grow overflow-x-auto "
         :dish="props.dish"
         :count="orderItem.count"
         @set-count="setCount"/>
-      <div class="flex mt-6">
+      <div class="flex mt-6 sticky bottom-0">
         <div class="text-sm">
           <p>{{ Q_DO_YOU_HAVE_ALLERGY }}</p>
           <textarea

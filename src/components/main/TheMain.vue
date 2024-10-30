@@ -16,9 +16,9 @@ const props = defineProps({
 </script>
 
 <template>
-  <div>
+  <main>
     <TheMenu v-if="props.activePage === THE_MENU"/>
     <TheOrder v-else-if="props.activePage === THE_ORDER"/>
     <ThePayment v-else/>
-  </div>
+  </main>
 </template>
